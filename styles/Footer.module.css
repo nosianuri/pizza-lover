@@ -13,11 +13,21 @@
     font-weight: bold;
 }
 
+/* .logo{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    
+  } */
+  
+
 .logo{
     display: flex;
+    align-items: center;
     justify-content: center;
-    justify-items: center;
     gap: 0.5rem;
+    flex: 1;
 }
 
 .logo>span{

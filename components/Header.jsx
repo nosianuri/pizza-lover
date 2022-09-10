@@ -1,4 +1,4 @@
-import css from '../styles/Home.module.css'
+import css from '../styles/Header.module.css'
 import Image from 'next/image'
 import Logo from '../assets/Logo.png'
 import  {UilShoppingBag} from '@iconscout/react-unicons'
