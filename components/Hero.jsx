@@ -2,6 +2,8 @@ import Image from 'next/image'
 import css from '../styles/Hero.module.css'
 import Cherry from '../assets/Cherry.png'
 import HeroImage from '../assets/HeroImage.png'
+import {UilPhone} from '@iconscout/react-unicons'
+import Pizza1 from '../assets/p1.jpg'
 
 export default function Hero() {
     return (
@@ -28,8 +30,27 @@ export default function Hero() {
             </div>
             {/* right side */}
             <div className={css.right}>
+
                 <div className={css.imageContainer}> 
                     <Image src={HeroImage} alt="" layout='intrinsic'/>
+                </div>
+
+                <div className={css.ContactUs}>
+                    <span>Contact Us</span>
+                    <div>
+                        <UilPhone color='white'/>
+                    </div>
+                </div>
+
+                <div className={css.Pizza}>
+                    <div>
+                        <Image src={Pizza1} alt="" objectFit="cover" layout="intrinsic"/>
+                    </div>
+
+                    <div className={css.details}>
+                        <span>Italian Pizza</span>
+                        <span><span style={{color: "var(--themeRed"}}>$</span> 7.49</span>
+                    </div>
                 </div>
             </div>
         </div>
