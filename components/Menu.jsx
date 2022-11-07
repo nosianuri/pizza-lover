@@ -3,7 +3,7 @@ import { urlFor } from '../lib/client';
 import css from '../styles/Menu.module.css';
 import Link from 'next/link';
 export default function Menu({ pizzas }) {
-    console.log(pizzas)
+    // console.log(pizzas)
     return (
         <div className={css.container}>
             <div className={css.heading}>
