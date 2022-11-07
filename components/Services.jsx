@@ -15,6 +15,7 @@ export default function Services() {
 
             {/* features */}
             <div className={css.services}>
+            
                 <div className={css.feature}>
                     <div className="css.ImageWrapper">
                         <Image src={s1} alt="" objectFit='cover' layout="intrinsic" />
