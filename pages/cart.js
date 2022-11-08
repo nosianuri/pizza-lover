@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import toast, {Toaster} from "react-hot-toast";
 import Layout from "../components/Layout";
+import OrderModal from "../components/OrderModal";
 import { urlFor } from "../lib/client";
 import { useStore } from "../store/store";
 import css from '../styles/Cart.module.css';
@@ -18,6 +19,8 @@ export default function Cart() {
     const total = ()=> CartData.pizzas.reduce((a,b)=>a+b.quantity * b.price, 0)
 
     const handleOnDelivery = () => {
+        setPaymentMethod(0);
+        typeof window !== 'undefined' && localStorage.setItem('total', total())
 
     }
     return(
@@ -106,6 +109,11 @@ export default function Cart() {
                 </div>
             </div>
             <Toaster />
+
+            {/* Modal */}
+            <OrderModal opened = {PaymentMethod === 0} 
+            setOpened = {setPaymentMethod}
+            PaymentMethod = {PaymentMethod} />
         </Layout>
     )
 }
