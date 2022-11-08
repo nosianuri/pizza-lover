@@ -5,10 +5,12 @@ import css from '../../styles/Pizza.module.css';
 import LeftArrow from '../../assets/arrowLeft.png';
 import RightArrow from '../../assets/arrowRight.png';
 import { useState } from "react";
+import { useStore } from "../../store/store";
+import toast, {Toaster} from 'react-hot-toast';
 
 export default function Pizza({ pizza }) {
 
-    console.log(pizza);
+    // console.log(pizza);
     const src = urlFor(pizza.image).url();
     const [Quantity, setQuantity] = useState(1);
     const [Size, setSize] = useState(1);
@@ -23,6 +25,13 @@ export default function Pizza({ pizza }) {
         ? null 
         : setQuantity((prev)=>prev - 1);
     };
+
+    // add to cart function
+    const addPizza = useStore((state)=>state.addPizza)
+    const addToCart = ()=> {
+        addPizza({...pizza, price: pizza.price[Size], quantity: Quantity, size: Size})
+        toast.success("Added to Cart")
+    }
 
     return (
     <Layout>
@@ -62,10 +71,11 @@ export default function Pizza({ pizza }) {
                 </div>
 
                 {/* button */}
-                <div className={`btn ${css.btn}`}>
+                <div className={`btn ${css.btn}`} onClick={addToCart}>
                     Add to cart
                 </div>
             </div>
+            <Toaster />
         </div>
     </Layout>);
 }
