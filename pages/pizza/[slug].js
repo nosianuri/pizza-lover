@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Pizza({ pizza }) {
 
-    // console.log(pizza);
+    console.log(pizza);
     const src = urlFor(pizza.image).url();
     const [Quantity, setQuantity] = useState(1);
     const [Size, setSize] = useState(1);

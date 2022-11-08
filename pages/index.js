@@ -3,10 +3,10 @@ import Layout from "../components/Layout";
 import Hero from "../components/Hero.jsx";
 import css from '../styles/Home.module.css'
 import Services from "../components/Services";
-import {client} from "../lib/client";
+import { client } from "../lib/client";
 import Menu from "../components/Menu";
 
-export default function Home({pizzas}) {
+export default function Home({ pizzas }) {
 
   // console.log(pizzas)
   return (
@@ -20,15 +20,15 @@ export default function Home({pizzas}) {
         {/* body */}
         <main>
           <Hero />
-          <Services /> 
-          <Menu pizzas={pizzas} />      
+          <Services />
+          <Menu pizzas={pizzas} />
         </main>
       </div>
-      </Layout>
+    </Layout>
   );
 }
 
-export const getServerSideProps = async()=> {
+export const getServerSideProps = async () => {
   const query = '*[_type == "pizza"]';
   const pizzas = await client.fetch(query);
   return {

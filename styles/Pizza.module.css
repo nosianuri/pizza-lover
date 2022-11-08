@@ -73,6 +73,7 @@
 .counter{
     display: flex;
     gap: 1rem;
+    cursor: pointer;
 }
 
 .btn{
